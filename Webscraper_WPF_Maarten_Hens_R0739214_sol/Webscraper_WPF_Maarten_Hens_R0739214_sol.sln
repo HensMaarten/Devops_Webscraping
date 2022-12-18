@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Webscraper_WPF_Maarten_Hens_R0739214", "Webscraper_WPF_Maarten_Hens_R0739214\Webscraper_WPF_Maarten_Hens_R0739214.csproj", "{82B6E456-212C-4125-A5FB-8585D2208921}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webscraper_WPF_Maarten_Hens_R0739214_DAL", "Webscraper_WPF_Maarten_Hens_R0739214_DAL\Webscraper_WPF_Maarten_Hens_R0739214_DAL.csproj", "{55C96708-593A-495E-AEEC-6E021E5B99FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82B6E456-212C-4125-A5FB-8585D2208921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82B6E456-212C-4125-A5FB-8585D2208921}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82B6E456-212C-4125-A5FB-8585D2208921}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82B6E456-212C-4125-A5FB-8585D2208921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55C96708-593A-495E-AEEC-6E021E5B99FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55C96708-593A-495E-AEEC-6E021E5B99FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55C96708-593A-495E-AEEC-6E021E5B99FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55C96708-593A-495E-AEEC-6E021E5B99FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7A5CEF3-7FC9-4A57-A54A-7BA75D99D4AF}
+	EndGlobalSection
+EndGlobal

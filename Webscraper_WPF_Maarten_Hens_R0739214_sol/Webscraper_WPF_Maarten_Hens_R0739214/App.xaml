@@ -1,0 +1,23 @@
+﻿<Application x:Class="Webscraper_WPF_Maarten_Hens_R0739214.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Webscraper_WPF_Maarten_Hens_R0739214"
+             Startup="Application_Startup">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="Cyan" SecondaryColor="Cyan" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--Primary colors-->
+            <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="#ECBA82"/>
+            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#279AF1"/>
+            <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="#AFECE7"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#77BFA3"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="#279AF1"/>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

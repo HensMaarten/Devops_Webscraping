@@ -1,0 +1,152 @@
+﻿<Window x:Class="Webscraper_WPF_Maarten_Hens_R0739214.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Webscraper_WPF_Maarten_Hens_R0739214.Views"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{StaticResource PrimaryHueDarkBrush}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainView" WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel
+    Orientation="Horizontal"
+    Margin="2">
+            <RadioButton
+      Style="{StaticResource MaterialDesignTabRadioButton}"
+      Margin="4"
+      IsChecked="True"
+                    Command="{Binding}" CommandParameter="ShowHomeContent"
+      Content="Home" />
+            <RadioButton
+      Style="{StaticResource MaterialDesignTabRadioButton}"
+      Margin="4"
+                    Command="{Binding}" CommandParameter="ShowYoutubeContent"
+      Content="Youtube" />
+            <RadioButton
+      Style="{StaticResource MaterialDesignTabRadioButton}"
+      Margin="4"
+      IsChecked="False"
+                     Command="{Binding}" CommandParameter="ShowIctJobsContent"
+      Content="ICT Jobs" />
+            <RadioButton
+      Style="{StaticResource MaterialDesignTabRadioButton}"
+      Margin="4"
+      IsChecked="False"
+                    Command="{Binding}" CommandParameter="ShowGamePricesContent"
+      Content="Game Prices" />
+        </StackPanel>
+        <!--ContentControl displays anything defined in the currently selected User Control-->
+
+
+        <Grid Grid.Row="1" Visibility="{Binding HomeContentVisible}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Margin="4" Text="Scrape The Web!" FontSize="48"></TextBlock>
+            <TextBlock Margin="4" Grid.Row="1" Text="{Binding IntroText}" FontSize="22"></TextBlock>
+            <TextBlock Margin="4" Grid.Row="2" Text="Made By: Maarten Hens"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="1" Visibility="{Binding YoutubeContentVisible}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Margin="4" Text="Scrape Youtube!" FontSize="48"></TextBlock>
+            <TextBox materialDesign:HintAssist.Hint="Vul hier je zoekterm voor een youtube video in" Grid.Row="1" x:Name="txtYoutubeSearchTerm" Text="{Binding YoutubeSearchTerm}"></TextBox>
+            <Button Grid.Row="2" x:Name="btnScrapeYoutube" Content="Let's Scrape" Command="{Binding}" CommandParameter="ScrapeYoutube" Margin="5" MaxWidth="300"></Button>
+            <DataGrid
+                    ItemsSource="{Binding YoutubeVideos}"
+                    Background="{StaticResource PrimaryHueDarkBrush}"
+                    x:Name="dgYoutube" 
+                    SelectedItem="{Binding SelectedYoutubeVideo}"
+                    AutoGenerateColumns="True"
+                    IsReadOnly="True"
+                Grid.Row="3">
+            </DataGrid>
+            <Button Grid.Row="5" x:Name="btnCopyYoutubeUrl" Content="Copy url to clipboard" Command="{Binding}" CommandParameter="CopyYoutubeUrl" Margin="5" MaxWidth="300"></Button>
+        </Grid>
+        <Grid Grid.Row="1" Visibility="{Binding IctJobsContentVisible}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Margin="4" Text="Scrape ICT Jobs!" FontSize="48"></TextBlock>
+            <TextBox materialDesign:HintAssist.Hint="Vul hier je zoekterm voor een ICT job in" Grid.Row="1" x:Name="txtIctJobsSearchTerm" Text="{Binding IctJobsSearchTerm}"></TextBox>
+            <Button Grid.Row="2" x:Name="btnScrapeIctJobs" Content="Let's Scrape" Command="{Binding}" CommandParameter="ScrapeICTJobs" Margin="5" MaxWidth="300"></Button>
+            <DataGrid
+                    ItemsSource="{Binding Jobs}"
+                    Background="{StaticResource PrimaryHueDarkBrush}"
+                    x:Name="dgICTJobs" 
+                    SelectedItem="{Binding SelectedJob}"
+                    AutoGenerateColumns="True"
+                    IsReadOnly="True"
+                Grid.Row="3">
+            </DataGrid>
+            <Button Grid.Row="5" x:Name="btnCopyJobUrl" Content="Copy url to clipboard" Command="{Binding}" CommandParameter="CopyJobUrl" Margin="5" MaxWidth="300"></Button>
+        </Grid>
+        <Grid Grid.Row="1" Visibility="{Binding GamePricesContentVisible}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Margin="4" Text="Scrape Game Prices!" FontSize="48"></TextBlock>
+            <TextBox materialDesign:HintAssist.Hint="Vul hier je zoekterm voor een game in" Grid.Row="1" x:Name="txtGameSearchTerm" Text="{Binding GameSearchTerm}"></TextBox>
+            <Button Grid.Row="2" x:Name="btnScrapeGames" Content="Let's Scrape" Command="{Binding}" CommandParameter="ScrapeGameSites" Margin="5" MaxWidth="300"></Button>
+            <DockPanel Grid.Row="3">
+                <Button Margin="10,5,5,5" x:Name="btnSortAscending" Content="Sort Price From Low To High" Command="{Binding}" CommandParameter="SortPricesAscending"></Button>
+                <Button Margin="5,5,10,5" x:Name="btnSortDescending" Content="Sort Price From High To Low" Command="{Binding}" CommandParameter="SortPricesDescending" HorizontalAlignment="Right"></Button>
+            </DockPanel>
+
+            <DataGrid
+                    ItemsSource="{Binding Games}"
+                    Background="{StaticResource PrimaryHueDarkBrush}"
+                    x:Name="dgGames" 
+                    SelectedItem="{Binding SelectedGame}"
+                    AutoGenerateColumns="True"
+                    IsReadOnly="True"
+                Grid.Row="4">
+            </DataGrid>
+            <Button Grid.Row="5" x:Name="btnCopyUrl" Content="Copy url to clipboard" Command="{Binding}" CommandParameter="CopyGameUrl" Margin="5" MaxWidth="300"></Button>
+        </Grid>
+    </Grid>
+</Window>
